@@ -3,13 +3,14 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
 import 'package:logger_flutter/logger_flutter.dart';
+export 'package:logger_flutter/logger_flutter.dart';
 
 void main() {
   runApp(MyApp());
   log();
 }
 
-var logger = Logger(
+Logger get logger => Logger(
   printer: PrettyPrinter(),
   output: LogConsole.wrap(innerOutput: ConsoleOutput()),
   filter: ProductionFilter(),
